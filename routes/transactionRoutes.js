@@ -20,6 +20,9 @@ module.exports = app => {
   
   // Retrieve a single Transaction with id
     router.get("/:id", [authJwt.verifyToken], transactions.findOne); 
+    
+  // Delete a Cart with id
+    router.delete("/:id", [authJwt.verifyToken], transactions.delete); 
 
 
     app.use('/api/transactions', router);
